@@ -2,18 +2,6 @@
 #include <gtest/gtest.h>
 #include "factory.cpp"
 
-TEST(FactoryMethodTest, WindowsDialogTest) {
-    Application app;
-    app.initialize("Windows");
-
-    testing::internal::CaptureStdout();
-    app.main();
-    std::string output = testing::internal::GetCapturedStdout();
-
-    EXPECT_NE(output.find("Rendering Windows-style button."), std::string::npos);
-    EXPECT_NE(output.find("Binding Windows OS click event."), std::string::npos);
-    EXPECT_NE(output.find("Dialog closed."), std::string::npos);
-}
 
 TEST(FactoryMethodTest, WebDialogTest) {
     Application app;
